@@ -22,5 +22,23 @@ public class Car extends Vehicle {
         this.numSeats = numSeats;
         this.brand = brand;
     }
+    // toString method will get called when you pass an object in a print statement
+    // Example of OVERRIDING a parent class method
+    public String toString() {
+        return ("Car [numWheels: " + this.getNumWheels() 
+        + ", avgSpeed: " + this.getAvgSpeed() 
+        + ", color: " + this.getColor() 
+        + ", numSeats: " + this.numSeats 
+        + ", brand: " + this.brand 
+        + "]");
+    }
+
+    // OVERRIDE parent class method
+    public void makeNoise() {
+        // use super.method() to call the parent's method FIRST
+        super.makeNoise();
+        // then add on to that behavior
+        System.out.println("Beep beep");
+    }
 
 }
